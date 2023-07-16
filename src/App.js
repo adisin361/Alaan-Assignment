@@ -32,7 +32,7 @@ function App() {
     if(checkIfPresent(eachSquare)) return;
     const surroundingSquares = checkSurroundings(eachSquare);
 
-    if(checkSurroundings(eachSquare)) {
+    if(checkIfCorner(eachSquare)) {
       setClickedSquare([...clickedSquares, {
         number: eachSquare,
         color: Math.random() < 0.5 ? 'red' : 'green'
@@ -66,7 +66,8 @@ function App() {
           }
         }
       })
-
+      console.log(greenCount);
+      console.log(redCount);
       if(greenCount < 5 && redCount < 5){
         setClickedSquare([...clickedSquares, {
           number: eachSquare,
